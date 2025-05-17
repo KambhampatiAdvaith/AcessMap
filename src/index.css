@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Custom wave pattern for profile page */
+.mask-wave-pattern {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='1200' height='100' viewBox='0 0 1200 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 25.5C200 -8.5 400 -8.5 600 25.5C800 59.5 1000 59.5 1200 25.5V100H0V25.5Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+  mask-image: url("data:image/svg+xml,%3Csvg width='1200' height='100' viewBox='0 0 1200 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 25.5C200 -8.5 400 -8.5 600 25.5C800 59.5 1000 59.5 1200 25.5V100H0V25.5Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+}
+
+/* More accessible focus styles */
+:focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Improved scrollbar for better accessibility */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* High contrast mode improvements */
+@media (forced-colors: active) {
+  button, a {
+    border: 1px solid;
+  }
+}
